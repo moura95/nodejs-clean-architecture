@@ -1,9 +1,8 @@
 import { IMailer } from "../interfaces/IMailer";
 import { IMessageBroker } from "../interfaces/IMessageBroker";
-import { IProductInteractor } from "../interfaces/IProductInteractor";
 import { IProductRepository } from "../interfaces/IProductRepository";
 
-export class ProductInteractor implements IProductInteractor {
+export class ProductService {
   private repository: IProductRepository;
   private mailer: IMailer;
   private broker: IMessageBroker;

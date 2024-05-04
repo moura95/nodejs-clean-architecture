@@ -1,18 +1,18 @@
 import { NextFunction, Request, Response } from "express";
-import { IProductInteractor } from "../interfaces/IProductInteractor";
+import { ProductService } from "../interactors/productService";
 
 export class ProductController {
-  private interactor: IProductInteractor;
+  private service: ProductService;
 
-  constructor(interactor: IProductInteractor) {
-    this.interactor = interactor;
+  constructor(service: ProductService) {
+    this.service = service;
   }
 
   async onCreateProduct(req: Request, res: Response, next: NextFunction) {
     try {
       const body = req.body;
       // validate logic
-      const data = await this.interactor.createProduct(body);
+      const data = await this.service.createProduct(body);
 
       return res.status(200).json(data);
     } catch (error) {
@@ -24,7 +24,7 @@ export class ProductController {
       const offset = parseInt(`${req.query.offset}`) || 0;
       const limit = parseInt(`${req.query.limit}`) || 10;
 
-      const data = await this.interactor.getProducts(limit, offset);
+      const data = await this.service.getProducts(limit, offset);
 
       return res.status(200).json(data);
     } catch (error) {
@@ -36,7 +36,7 @@ export class ProductController {
       const id = parseInt(req.params.id);
       const stock = req.body.stock;
 
-      const data = await this.interactor.updateStock(id, stock);
+      const data = await this.service.updateStock(id, stock);
 
       return res.status(200).json(data);
     } catch (error) {

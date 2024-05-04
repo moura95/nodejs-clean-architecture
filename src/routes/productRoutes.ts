@@ -1,6 +1,6 @@
 import express from "express";
 import { ProductRepository } from "../repositories/productRepository";
-import { ProductInteractor } from "../interactors/productInteractor";
+import { ProductService } from "../interactors/productService";
 import { Mailer } from "../external-libraries/mailer";
 import { MessageBroker } from "../external-libraries/messageBroker";
 import { ProductController } from "../controllers/productController";
@@ -9,9 +9,9 @@ const repository = new ProductRepository();
 const mailer = new Mailer();
 const broker = new MessageBroker();
 
-const interactor = new ProductInteractor(repository, mailer, broker);
+const service = new ProductService(repository, mailer, broker);
 
-const controller = new ProductController(interactor);
+const controller = new ProductController(service);
 const router = express.Router();
 
 router.post("/products", controller.onCreateProduct.bind(controller));
