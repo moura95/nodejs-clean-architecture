@@ -1,6 +1,6 @@
 import express from "express";
 import { ProductRepository } from "../repositories/productRepository";
-import { ProductService } from "../interactors/productService";
+import { ProductService } from "../services/productService";
 import { Mailer } from "../external-libraries/mailer";
 import { MessageBroker } from "../external-libraries/messageBroker";
 import { ProductController } from "../controllers/productController";
