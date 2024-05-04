@@ -1,0 +1,17 @@
+PORT=4000
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=root
+DB_PASSWORD=root
+DB_NAME=clean_architecture
+DATABASE_URL=postgres://root:root@localhost:5432/clean_architecture
+NODE_ENV=development
+
+# Redis
+# REDIS_HOST=localhost
+# REDIS_PORT=6381
+# REDIS_PASSWORD=123456
+
+# Knex debug
+KNEX_DEBUG=0
+
