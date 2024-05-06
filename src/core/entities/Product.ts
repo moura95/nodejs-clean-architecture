@@ -3,7 +3,7 @@ export class Product {
     public readonly name: string,
     public readonly description: string,
     public readonly price: number,
-    public readonly stock: number,
+    public stock: number,
     public readonly id?: number
   ) {}
 }

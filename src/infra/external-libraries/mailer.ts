@@ -1,4 +1,4 @@
-import { IMailer } from "../interfaces/IMailer";
+import { IMailer } from "../../core/interfaces/IMailer";
 
 export class Mailer implements IMailer {
   SendEmail(to: string, product: unknown) {

@@ -1,4 +1,4 @@
-import { IMessageBroker } from "../interfaces/IMessageBroker";
+import { IMessageBroker } from "../../core/interfaces/IMessageBroker";
 
 export class MessageBroker implements IMessageBroker {
   NotifyToPromotionService(product: unknown) {

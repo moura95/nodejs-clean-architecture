@@ -1,9 +1,9 @@
 import express from "express";
 import { ProductRepository } from "../repositories/productRepository";
-import { ProductService } from "../services/productService";
+import { ProductService } from "../../core/services/productService";
 import { Mailer } from "../external-libraries/mailer";
 import { MessageBroker } from "../external-libraries/messageBroker";
-import { ProductController } from "../controllers/productController";
+import { ProductController } from "../../controllers/productController";
 
 const repository = new ProductRepository();
 const mailer = new Mailer();
